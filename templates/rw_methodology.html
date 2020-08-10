@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <title>Analysis Methodology</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+
+    <!-- d3 JavaScript -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  </head>
+
+  <body>
+      <!-- Navigation Section Begins -->
+      <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <!-- List of items in the Navigation section -->
+            <ul class="navbar-nav">
+              <!-- Dashboard in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
+              </li>
+              
+              <!-- Exploratory data Analysis in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('analysis') }}">Exploratory Analysis</a>
+              </li>
+  
+              <!-- Visualizations DropDown Menu in the Navigation Section -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Visualizations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="{{ url_for ('growth') }}">House Price Changes Over Time</a>
+                  <a class="dropdown-item" href="{{ url_for ('pricemap') }}">House Price Distribution</a>
+                  <a class="dropdown-item" href="{{ url_for ('prediction') }}">House Price Prediction</a>
+                </div>
+              </li>
+  
+              <!-- Analysis Methodology in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+              </li>
+  
+              <!-- Acknowledgements in the Navigation Section -->
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <!-- Navigation Section Ends -->
+      
+      <!--Content Section Begins-->
+      <div class="container">
+        <!-- Project explanation Begins-->
+        <div>
+          <h3>Data, Tools, Processes & Methodologies</h3>
+          <!-- Web app explanation begins-->
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Deployment of Web Application using Python Flask</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Created a web application using Python Flask</td>
+              </tr>
+              <tr>
+                <td scope="row">Deployed the web application on Heroku: <a href="https://rw-housepricepredict.herokuapp.com/">https://rw-housepricepredict.herokuapp.com/</a></td>
+              </tr>
+              <tr>
+                <td scope="row">Provisioned a PostgreSQL database for the web application</td>
+              </tr>
+              <tr>
+                <td scope="col"><strong>Source code is available on Github: </strong><a href="">https://github.com/</a></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Web app explanation ends-->
+          <!-- Datasource explanation begins-->
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Data Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">The datasets for the analysis were sourced from <a href="">Zillow</a> and consists of:</td>
+              </tr>
+
+            </tbody>
+          </table>
+          <!-- Datasource explanation ends-->
+          <!-- ETL explanation begins-->
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">ETL Processes Employed for Anlaysis using Python, PostgreSQL, SQLAlchemy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+              </tr>
+              <tr>
+                <td scope="row">Changed datatypes of relevant attributes</td>
+              </tr>
+              <tr>
+                <td scope="row">Deleted null values from analysis</td>
+              </tr>
+              <tr>
+                <td scope="row">Renamed attiributes for standardization and consistency</td>
+              </tr>
+              <tr>
+                <td scope="row">Developed the table schema for loading the dataset into PostgreSQL database</td>
+              </tr>
+              <tr>
+                <td scope="row">Connected to the PostgreSQL database using SQLAlchemy</td>
+              </tr>
+              <tr>
+                <td scope="row">Stored the final dataset(s) into PostgreSQL using SQLAlchemy</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- ETL explanation ends-->
+          <!-- Data analysis explanation begins-->
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Data Analysis using Python</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Analyzed the data in Python to identify trends and correlations</td>
+              </tr>
+              <tr>
+                <td scope="row">Predicted house pricies using ....</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Data analysis explanation ends-->
+          <!-- Web visualization explanation begins-->
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Web Visualizations using HTML, CSS, JavaScript</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row">Created a dashboard page with multiple, static and dynamic charts</td>
+              </tr>
+              <tr>
+                <td scope="row">Created web visualizations using Tableau</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          <!-- Web visualization explanation begins-->
+        </div>
+        <!-- Project explanation ends-->  
+      </div>
+      <!-- Content Section ends -->
+    
+    <!-- Footer Section Begins-->
+    <footer>
+        <div class="footer">Copyright &copy; Machine Learning Enthusiasts 2020</div>
+    </footer>
+    <!-- Footer Section Ends-->
+    
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+  </body> 
+</html>

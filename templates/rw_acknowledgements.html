@@ -49,12 +49,13 @@
             <!-- Visualizations DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Visualizations
+              House Price Predictions
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for ('growth') }}">House Price Changes Over Time</a>
-                <a class="dropdown-item" href="{{ url_for ('pricemap') }}">House Price Distribution</a>
-                <a class="dropdown-item" href="{{ url_for ('prediction') }}">House Price Prediction</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction1bdr') }}">1 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction2bdr') }}">2 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction3bdr') }}">3 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction4bdr') }}">4 Bedroom House Prices</a>
               </div>
             </li>
 

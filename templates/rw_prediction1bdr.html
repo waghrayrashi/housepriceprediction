@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <title>House Price Distribution</title>
+    <title>Dashboard</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -24,7 +24,7 @@
   </head>
 
   <body>
-      
+    
     <!-- Navigation Section Begins -->
     <div class="navigation">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -49,12 +49,13 @@
             <!-- Visualizations DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Visualizations
+              House Price Predictions
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for ('growth') }}">House Price Changes Over Time</a>
-                <a class="dropdown-item" href="{{ url_for ('pricemap') }}">House Price Distribution</a>
-                <a class="dropdown-item" href="{{ url_for ('prediction') }}">House Price Prediction</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction1bdr') }}">1 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction2bdr') }}">2 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction3bdr') }}">3 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction4bdr') }}">4 Bedroom House Prices</a>
               </div>
             </li>
 
@@ -73,25 +74,33 @@
     </div>
     <!-- Navigation Section Ends -->
 
-    <!--Content Section Begins-->          
-    <div class="container">
-      <br>
-      <h3>Median Home Price Prediction</h3>
-      <p>TBD</p>
+    <!-- Content Section Begins -->
+    <div class="container" style="padding-bottom: 40px;">
+      <!-- Row 1 for 2 plots begins -->
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="title">One Bedroom House Prices in North Carolina</div>
+            <p>R-Square = .</p>
+        </div>
 
-    </div>
-    <!--Content Section Ends-->
-
-    <!-- Footer Section Begins-->
+        <div class="col-lg-6">
+          <div class="title"></div>
+            <img class="panel" id="activeimage" src="./static/images/LinearRegression_2bdr.png" alt="2 Bedroom house price prediction"width="500px", height="300px">
+            </a>
+        </div>
+      </div>
+      <!-- Row 1 for plots 1 & 2 begins -->
+    
+      <!-- Footer Section begins -->
     <footer>
-      <div class="footer">Copyright &copy; Machine Learning Enthusiasts 2020</div>
+        <div class="footer">Copyright &copy; Machine Learning Enthusiasts 2020</div>
     </footer>
-    <!-- Footer Section Ends-->
+    <!-- Footer Section begins -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+
 </html>

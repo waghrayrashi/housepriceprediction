@@ -49,12 +49,13 @@
             <!-- Visualizations DropDown Menu in the Navigation Section -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Visualizations
+              House Price Predictions
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="{{ url_for ('growth') }}">House Price Changes Over Time</a>
-                <a class="dropdown-item" href="{{ url_for ('pricemap') }}">House Price Distribution</a>
-                <a class="dropdown-item" href="{{ url_for ('prediction') }}">House Price Prediction</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction1bdr') }}">1 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction2bdr') }}">2 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction3bdr') }}">3 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction4bdr') }}">4 Bedroom House Prices</a>
               </div>
             </li>
 
@@ -73,34 +74,34 @@
     </div>
     <!-- Navigation Section Ends -->
 
-<!--Content section begins-->
-<div class="container">
-    <!-- Row 1 section begins -->
-    <div class="row">
-      <!-- Boxed content begins -->
-      <div class="box">
-        <h3 class="title">House Price Prediction</h3>
-        <h4 class="title">Predictive modeling based on factors like median income, number of schools and their rating.</h4>
-        <p>This project aims to predict house price values using Machine Learning algorithms considering factors like median income in a city, public schools, hospitals and crime rate in the city.</p>
-        
-        <h4 class="title">Our Focus - Prediction of House Prices in US Cities</h4>
-        <p>Through this project, the Machine Learning Enthusiasts explore and predict house prices in US cities through machine learning algorithms.
-            This site provides information about the data and <strong><u>machine learning tools</u></strong> used in the analysis and prediction of house values.
-        </p>
-        <p>Due to time limitations, the focus of this project is limited to the following:</p>
-        <ol>
-          <li><strong>What is the predicted price of a home in a given city in the next few months?</strong></li>
-          <li><strong>How do house prices vary by location?</strong></li>
-          <li><strong>???</strong></li>
-        </ol>
+    <!--Content section begins-->
+    <div class="container">
+        <!-- Row 1 section begins -->
+        <div class="row">
+          <!-- Boxed content begins -->
+          <div class="box">
+            <h3 class="title">House Price Prediction</h3>
+            <h4 class="title">Predictive modeling based on factors like median income, number of schools and their rating.</h4>
+            <p>This project aims to predict house price values using Machine Learning algorithms considering factors like median income in a city, public schools, hospitals and crime rate in the city.</p>
+            
+            <h4 class="title">Our Focus - Prediction of House Prices in US Cities</h4>
+            <p>Through this project, the Machine Learning Enthusiasts explore and predict house prices in US cities through machine learning algorithms.
+                This site provides information about the data and <strong><u>machine learning tools</u></strong> used in the analysis and prediction of house values.
+            </p>
+            <p>Due to time limitations, the focus of this project is limited to the following:</p>
+            <ol>
+              <li><strong>What is the predicted price of a home in a given city in the next few months?</strong></li>
+              <li><strong>How do house prices vary by location?</strong></li>
+              <li><strong>???</strong></li>
+            </ol>
+          </div>
+          <!-- Boxed content ends -->
+        </div>
+        <!-- Row 1 section ends -->
       </div>
-      <!-- Boxed content ends -->
-    </div>
-    <!-- Row 1 section ends -->
-  </div>
-  <!--Content section ends-->
-  <br>
-  <br>
+      <!--Content section ends-->
+      <br>
+      <br>
 
     <!-- Footer Section Begins-->
     <footer>

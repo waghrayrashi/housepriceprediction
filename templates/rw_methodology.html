@@ -24,60 +24,67 @@
   </head>
 
   <body>
-      <!-- Navigation Section Begins -->
-      <div class="navigation">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <!-- List of items in the Navigation section -->
-            <ul class="navbar-nav">
-              <!-- Dashboard in the Navigation Section -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
-              </li>
-              
-              <!-- Exploratory data Analysis in the Navigation Section -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for ('analysis') }}">Exploratory Analysis</a>
-              </li>
-  
-              <!-- Visualizations DropDown Menu in the Navigation Section -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Visualizations
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{{ url_for ('growth') }}">House Price Changes Over Time</a>
-                  <a class="dropdown-item" href="{{ url_for ('pricemap') }}">House Price Distribution</a>
-                  <a class="dropdown-item" href="{{ url_for ('prediction') }}">House Price Prediction</a>
-                </div>
-              </li>
-  
-              <!-- Analysis Methodology in the Navigation Section -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
-              </li>
-  
-              <!-- Acknowledgements in the Navigation Section -->
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-      <!-- Navigation Section Ends -->
+    <!-- Navigation Section Begins -->
+    <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="{{ url_for ('index') }}">Overview</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <!-- List of items in the Navigation section -->
+          <ul class="navbar-nav">
+            <!-- Dashboard in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('dashboard') }}">Dashboard</a>
+            </li>
+            
+            <!-- Exploratory data Analysis in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('analysis') }}">Exploratory Analysis</a>
+            </li>
+
+            <!-- Visualizations DropDown Menu in the Navigation Section -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              House Price Predictions
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="{{ url_for ('prediction1bdr') }}">1 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction2bdr') }}">2 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction3bdr') }}">3 Bedroom House Prices</a>
+                <a class="dropdown-item" href="{{ url_for ('prediction4bdr') }}">4 Bedroom House Prices</a>
+              </div>
+            </li>
+
+            <!-- Analysis Methodology in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+            </li>
+
+            <!-- Acknowledgements in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- Navigation Section Ends -->
       
       <!--Content Section Begins-->
       <div class="container">
         <!-- Project explanation Begins-->
         <div>
-          <h3>Data, Tools, Processes & Methodologies</h3>
+          <h3>Data Sources</h3>
           <!-- Web app explanation begins-->
+          <p>The data for the analysis was sourced from the following sources:</p>
+          <ol>
+            <li>Zillow: Median house prices</li>
+            <li>Census: Population, Poverty Rate, Median Income</li>
+            <li>Schools</li>
+          </ol>
           <table class="table table-sm">
             <thead>
               <tr>

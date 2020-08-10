@@ -66,31 +66,36 @@ def analysis():
     return render_template("rw_analysis.html")
 
 ########################################################
-# Render the change over time plot HTML 
+# Render the 1 BDR price prediction HTML 
 #######################################################
-@app.route("/growth")
-def growth():
-    """Return the growth page."""
-    return render_template("rw_growth.html")
+@app.route("/prediction1bdr")
+def prediction1bdr():
+    """Return the 1 BDR price prediction page."""
+    return render_template("rw_prediction1bdr.html")
 
 ########################################################
-# Render the pricemap HTML 
+# Render the 2 BDR price prediction HTML 
 #######################################################
-@app.route("/pricemap")
-def pricemap():
-    """Return the pricemap page."""
-    return render_template("rw_pricemap.html")
+@app.route("/prediction2bdr")
+def prediction2bdr():
+    """Return the 2 BDR price prediction page."""
+    return render_template("rw_prediction2bdr.html")
 
 ########################################################
-# Render the prediction HTML 
+# Render the 3 BDR price prediction HTML 
 #######################################################
-@app.route("/prediction")
-def prediction():
-    """Return the prediction page."""
-    return render_template("rw_prediction.html")
-#############################################################################################
-# Rashi's additional routes
-############################################################################################
+@app.route("/prediction3bdr")
+def prediction3bdr():
+    """Return the 3 BDR price prediction page."""
+    return render_template("rw_prediction3bdr.html")
+
+########################################################
+# Render the 4 BDR price prediction HTML 
+#######################################################
+@app.route("/prediction4bdr")
+def prediction4bdr():
+    """Return the 4 BDR price prediction page."""
+    return render_template("rw_prediction4bdr.html")
 
 ###################################################################
 # Code to actually run the app

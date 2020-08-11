@@ -95,6 +95,14 @@ def dashboard():
     return render_template("rw_dashboard.html")
 
 #######################################################
+# Render the Conclusions HTML 
+#######################################################
+@app.route("/conclusions")
+def conclusions():
+    """Return the Conclusions page."""
+    return render_template("rw_conclusions.html")
+
+#######################################################
 # Render the Analysis Methodology HTML
 #######################################################
 @app.route("/methodology")

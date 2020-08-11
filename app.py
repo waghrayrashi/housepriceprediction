@@ -21,20 +21,20 @@ from flask_sqlalchemy import SQLAlchemy
 # Database Connection Set up
 ##########################################
 # Setup SQLAlchemy with flask
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '')
-# Create database and pass in the app 
-db = SQLAlchemy(app)
+# app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URL', '')
+# # Create database and pass in the app 
+# db = SQLAlchemy(app)
 
-# Create engine
-conn_str = "postgres://rilcwxqbdcttnx:6fbe02be55d33cf132b076fcec9f961162a0eb3ffc67aff912d8aedeabfcfe5e@ec2-34-237-89-96.compute-1.amazonaws.com:5432/d3c3p19kp6bchj"
-engine = create_engine(conn_str)
+# # Create engine
+# conn_str = "postgres://rilcwxqbdcttnx:6fbe02be55d33cf132b076fcec9f961162a0eb3ffc67aff912d8aedeabfcfe5e@ec2-34-237-89-96.compute-1.amazonaws.com:5432/d3c3p19kp6bchj"
+# engine = create_engine(conn_str)
 
-# Reflect the database 
-Base = automap_base()
+# # Reflect the database 
+# Base = automap_base()
 
 # Reflect the tables into SQLAlchemy classes
-Base.prepare(engine, reflect=True)
-allclasses = Base.classes.keys()
+# Base.prepare(engine, reflect=True)
+# allclasses = Base.classes.keys()
 
 ##########################################
 # Flask Set up

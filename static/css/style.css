@@ -15,11 +15,6 @@ a{
   font-size: 15px; 
 }
 
-/* Map ID */
-/* Set height of map */
-/* #ratingsmapid {height: 600px; width: 800px;}
-#hoodsbyratingsmapid {height: 100%; width: 100%;}
-#hoodsbypricesmapid {height: 100%; width: 100%;} */
 
 /* Navbar */
 .navigation{
@@ -35,11 +30,11 @@ a{
   margin-left: 30px; 
   padding: inherit; 
   font-weight: bold; 
-  background-color: #b95cdd !important;
+  /* background-color: #b95cdd !important; */
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .navbar-brand:hover{
-  color:#183ee6 !important;
+  color:#186ae6 !important;
   }
 
 .navbar{
@@ -48,34 +43,34 @@ a{
   font-size: 15px; 
 }
 .nav-link:hover{
-  color:#183ee6 !important;
+  color:#186ae6 !important;
   float: right;
  }
 
 .active, .dropdown-menu .dropdown-item:active a:hover{
   background-color:#E7E7E7 !important; 
-  color:#183ee6 !important;
+  color:#186ae6 !important;
 
 }
 .dropdown-item{
-  /* color: #6D8092 !important;  */
-  color: #1f1627 !important;
+  color: #6D8092 !important; 
+  /* color: #1f1627 !important; */
 }
 
 .active, .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{
   background-color:#E7E7E7 !important; 
-  color:#183ee6 !important;
+  color:#186ae6 !important;
 }
 
 /* Images */
 .activeimage:hover{
-  border-color:#6e20d4;
+  border-color:#080808;
   border-style: solid; 
  
 } 
 
 .panel:hover{
-  border-color:#6e20d4;
+  border-color:#080808;
   border-style: solid; 
 
 }
@@ -122,7 +117,7 @@ footer{
 background-color: #666666; 
 border-top-style: solid; 
 border-top-width: 5px; 
-border-top-color: #6e20d4;
+border-top-color: #080808;
 color: white; 
 min-height: 55px; 
 font-family: Arial, Helvetica, sans-serif;
@@ -138,7 +133,7 @@ padding-top: 15px;
 /* Media Queries */
 @media(max-width: 1140px){
 .navbar-expand-lg{
-background-color: #135ea5 !important;
+/* background-color: #135ea5 !important; */
   }
 
 .navbar{

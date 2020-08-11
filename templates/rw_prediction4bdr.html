@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   
-    <title>Dashboard</title>
+    <title>4 BDR House Price Prediction</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -82,20 +82,37 @@
 
     <!-- Content Section Begins -->
     <div class="container" style="padding-bottom: 40px;">
-      <!-- Row 1 for 2 plots begins -->
+      
+      <!-- Row 1 begins -->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="title">Four Bedroom House Prices in North Carolina</div>
+          <p>Model looks linear. </p>
+          <p>Residual plot is used to check the prediction because a predictive line cannot be plotted in a 3D space for the multiple Linear Regression model.</p>
+          <p>r-square =  [not "good" because it is not close to 1]</p>
+        </div>
+      </div>
+      <!-- Row 1 ends -->
+
+      <!-- Row 2 begins -->
       <div class="row">
         <div class="col-lg-6">
-          <div class="title">Four Bedroom House Prices in North Carolina</div>
-            <p>R-Square = .</p>
+          <div class="title">Prediction Model</div>
+          <img class="panel" id="activeimage" src="./static/images/LinearRegression_4bdr.png" alt="Prediction (4 BDR)"width="500px", height="300px">
+          <p>Model explanation</p>
         </div>
 
         <div class="col-lg-6">
-          <div class="title"></div>
-            <img class="panel" id="activeimage" src="./static/images/LinearRegression_2bdr.png" alt="2 Bedroom house price prediction"width="500px", height="300px">
-            </a>
+          <div class="title">Residual Plot for Training and Testing Data</div>
+          <img class="panel" id="activeimage" src="./static/images/Residual Plot_4bdr.png" alt="Residual Plot (4 BDR)"width="500px", height="300px">
+          <p><strong>Residuals</strong> are the difference between the true house prices (y) and the predicted house prices (predicted).
+            The closer the predictive values are to the zero on the y-axis on the residual plot, the more accurate the predictions.</p>
         </div>
       </div>
-      <!-- Row 1 for plots 1 & 2 begins -->
+      <!-- Row 2 ends -->
+    
+    </div>
+    <!-- Content Section Ends -->
     
       <!-- Footer Section begins -->
     <footer>

@@ -73,127 +73,99 @@
     </div>
     <!-- Navigation Section Ends -->
       
-      <!--Content Section Begins-->
-      <div class="container">
-        <!-- Project explanation Begins-->
-        <div>
-          <h3>Data Sources</h3>
-          <!-- Web app explanation begins-->
-          <p>The data for the analysis was sourced from the following sources:</p>
-          <ol>
-            <li>Zillow: Median house prices</li>
-            <li>Census: Population, Poverty Rate, Median Income</li>
-            <li>Schools</li>
-          </ol>
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Deployment of Web Application using Python Flask</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">Created a web application using Python Flask</td>
-              </tr>
-              <tr>
-                <td scope="row">Deployed the web application on Heroku: <a href="https://rw-housepricepredict.herokuapp.com/">https://rw-housepricepredict.herokuapp.com/</a></td>
-              </tr>
-              <tr>
-                <td scope="row">Provisioned a PostgreSQL database for the web application</td>
-              </tr>
-              <tr>
-                <td scope="col"><strong>Source code is available on Github: </strong><a href="">https://github.com/</a></td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Web app explanation ends-->
-          <!-- Datasource explanation begins-->
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Data Source</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">The datasets for the analysis were sourced from <a href="">Zillow</a> and consists of:</td>
-              </tr>
+    <!--Content Section Begins-->
+    <div class="container">
+      <!-- Web app explanation begins-->
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Flask Web Application</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Web application is deployed on Heroku: <a href="https://waghrayrashi-houseprices.herokuapp.com/">https://waghrayrashi-houseprices.herokuapp.com/</a></td>
+          </tr>
+          <tr>
+            <td scope="col">Source code is available on Github: <a href="https://github.com/waghrayrashi/housepriceprediction">https://github.com/waghrayrashi/housepriceprediction</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Web app explanation ends-->
+      <!-- Datasource explanation begins-->
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Data Sources</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">The data for this analysis was sourced from the following sources:</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://www.zillow.com/research/data/">Zillow: </a>Median House prices ($) based on Zillow Home Value Index (ZHVI) for single family residences (1-4 bedrooms)</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://github.com/datamade/census ">Census Data: </a>Population, Poverty Rate, and Median Household Income ($)</td>
+          </tr>
+          <tr>
+            <td scope="row"><a href="https://hifld-geoplatform.opendata.arcgis.com/datasets/87376bdb0cb3490cbda39935626f6604_0">HIFLD Schools Data: </a>Feature dataset of all Public, K-12 schools (2017-2018)</td>
+          </tr>
 
-            </tbody>
-          </table>
-          <!-- Datasource explanation ends-->
-          <!-- ETL explanation begins-->
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">ETL Processes Employed for Anlaysis using Python, PostgreSQL, SQLAlchemy</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
-              </tr>
-              <tr>
-                <td scope="row">Changed datatypes of relevant attributes</td>
-              </tr>
-              <tr>
-                <td scope="row">Deleted null values from analysis</td>
-              </tr>
-              <tr>
-                <td scope="row">Renamed attiributes for standardization and consistency</td>
-              </tr>
-              <tr>
-                <td scope="row">Developed the table schema for loading the dataset into PostgreSQL database</td>
-              </tr>
-              <tr>
-                <td scope="row">Connected to the PostgreSQL database using SQLAlchemy</td>
-              </tr>
-              <tr>
-                <td scope="row">Stored the final dataset(s) into PostgreSQL using SQLAlchemy</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- ETL explanation ends-->
-          <!-- Data analysis explanation begins-->
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Data Analysis using Python</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">Analyzed the data in Python to identify trends and correlations</td>
-              </tr>
-              <tr>
-                <td scope="row">Predicted house pricies using ....</td>
-              </tr>
-            </tbody>
-          </table>
-          <!-- Data analysis explanation ends-->
-          <!-- Web visualization explanation begins-->
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Web Visualizations using HTML, CSS, JavaScript</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td scope="row">Created a dashboard page with multiple, static and dynamic charts</td>
-              </tr>
-              <tr>
-                <td scope="row">Created web visualizations using Tableau</td>
-              </tr>
-            </tbody>
-          </table>
-          <br>
-          <br>
-          <!-- Web visualization explanation begins-->
-        </div>
-        <!-- Project explanation ends-->  
-      </div>
-      <!-- Content Section ends -->
+        </tbody>
+      </table>
+      <!-- Datasource explanation ends-->
+      <!-- ETL explanation begins-->
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">ETL Processes Employed for Anlaysis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Filtered, grouped and performed aggregations on relevant attributes using Pandas</td>
+          </tr>
+          <tr>
+            <td scope="row">Changed datatypes of relevant attributes</td>
+          </tr>
+          <tr>
+            <td scope="row">Deleted null values from analysis</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- ETL explanation ends-->
+      <!-- Data analysis explanation begins-->
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Exploratory & Predictive Analysis using Tableau Public & Python Libraries (Pandas, Scikit-learn, Matplotlib, Numpy)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Identified trends in house prices across North Carolina</td>
+          </tr>
+          <tr>
+            <td scope="row">Identified correlations between various features effecting house prices</td>
+          </tr>
+          <tr>
+            <td scope="row">Explored the relationship between income, poverty rate, number of public schools and Median House Prices</td>
+          </tr>
+          <tr>
+            <td scope="row">Predicted house pricies with Linear Regression using Scikit-learn and matplotlib</td>
+          </tr>
+          <tr>
+            <td scope="row">Created multiple, static and dynamic visualizations using Tableau Public</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Data analysis explanation ends-->
+      <br>
+      <br>
+    </div>
+    <!-- Content Section ends -->
     
     <!-- Footer Section Begins-->
     <footer>

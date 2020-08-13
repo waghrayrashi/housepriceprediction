@@ -81,68 +81,108 @@
     <!-- Navigation Section Ends -->
 
     <!-- Content Section Begins -->
-    <div class="container" style="padding-bottom: 40px;">
-      
+    <div class="container">
       <!-- Row 1 begins -->
       <div class="row">
-        <div class="col-lg-12">
-          <div class="title">Prediction of 1-Bedroom House Prices in North Carolina</div>
-          <br>
-          <table class="table table-sm">
-            <thead>
-              <tr>
-                <th scope="col">Model Validation Metric</th>
-                <th scope="col">Value</th>
-                <th scope="col">Conclusions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Training Score (r-squared)</th>
-                <td>0.324</td>
-                <td>Not good, needs to be closer to 1 for better prediction</td>
-              </tr>
-              <tr>
-                <th scope="row">Testing Score (r-squared)</th>
-                <td>0.244</td>
-                <td>Not good, needs to be closer to 1 for better prediction</td>
-              </tr>
-              <tr>
-                <th scope="row">Residuals*</th>
-                <td>See plot below</td>
-                <td>Predictive values are not very close to the zero on the y-axis indicating high residuals-need improvement.</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="box" width = "1200">
+          <h3 class="title">Prediction of 1-Bedroom House Prices in North Carolina</h3>
+            <br>
 
-          <h6>Notes:</h6>
-          <ul>
-            <li>Predictive line cannot be plotted in a 3D space for the multiple Linear Regression model.</li>
-            <li>Highly collinear factors (like Population, Median Household Income, Poverty Rate) could be negatively effecting scores</li>
-            <li>Study of the Variance Inflation Factor (VIF) is required</li>
-          </ul>
+          <h5>I. CHECK THE DISTRIBUTION OF HOUSE PRICES</h5>
+            <figure class="figure">
+              <!-- <img class="panel" id="activeimage" src="./static/images/PriceDistribution_1bdr.png" alt="Price Distribution (1 BDR)"width="500px", height="300px"> -->
+              <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/PriceDistribution_1bdr.png" alt="Price Distribution (1 BDR)"width="500px", height="300px">
+              <figcaption class="figure-caption text-center">House Price Distribution (1 BDR)</figcaption>
+            </figure>
+            <ul>
+              <li>House prices have a positive skew with higher concentration on cheaper homes.</li>
+              <li>To get a more symmetrical distribution, the logarithm of house prices could help.</li>
+              <ul>
+                <li>Skew= 1.66</li>
+                <li>Kurtosis = 4.67</li>
+              </ul>
+            </ul>
+              
+          <h5>II. NORMALIZE DISTRIBUTION BY TAKING LOGARITHM OF HOUSE PRICES</h5>
+            <figure class="figure">
+              <!-- <img class="panel" id="activeimage" src="./static/images/LogPriceDistribution_1bdr.png" alt="Log. Price Distribution (1 BDR)"width="500px", height="300px"> -->
+              <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LogPriceDistribution_1bdr.png" alt="Log. Price Distribution (1 BDR)"width="500px", height="300px">
+              <figcaption class="figure-caption text-center">Logarithmic House Price Distribution (1 BDR)</figcaption>
+            </figure>
+              <ul>
+                <li>Taking the logarithm of house prices, we obtain something similar to a Gaussian distribution.</li>
+                <li>This logarithmic distribution will ensure that relative errors for cheaper and more expensive homes are treated on an equal footing.</li>
+              <ul>
+                <li>Skew (for Log.Dist.) = -0.48</li>
+                <li>Kurtosis (for Log.Dist.) = 0.65</li>
+              </ul>
+            </ul>
+
+          <h5>III. MEASURE LINEAR RELATIONSHIP BETWEEN THE PREDICTOR VARIABLES</h5>
+            <figure class="figure">
+            <!-- <img class="panel" id="activeimage" src="./static/images/Correlation Matrix_1bdr.png" alt="Correlation Matrix (1 BDR)"width="500px", height="300px"> -->
+            <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Correlation Matrix_1bdr.png" alt="Correlation Matrix (1 BDR)"width="500px", height="300px">
+            <figcaption class="figure-caption text-center">Correlation Matrix (1 BDR)</figcaption>
+            </figure>
+            <ol>
+              <li>An important point in selecting predictors for a linear regression model is to check for multicolinearity (if multiple predictors mean the same thing).</li>
+              <li>Population and Number of Schools are strongly correlated to each other with a correlation co-efficient of 0.81. These feature pairs can affect the model.</li>
+              <li>Similarly, the Median Household Income and Poverty Rate have a strong negative correlation of -0.72 which could also cause multicollinearity.</li>
+            </ol>
+
+          <h5>IV. BUILD THE LINEAR REGRESSION MODEL</h5>
+            <ul>
+              <li><strong>Number of Samples:</strong> 406</li>
+              <li><strong>Target Variable</strong>: Median House Price (USD)</li>
+              <li><strong>Total Predictors:</strong> 6</li>
+              <ul>
+                <li>Numerical Predictors: 4</li>
+                <li>Categorical Predictors: 2</li>
+              </ul>
+              <li><strong>Predictor Information:</strong></Li>
+                <ul>
+                  <li>City (Categorical)</li>
+                  <li>Zipcode (Categorical)</li>
+                  <li>Population per zipcode (Numerical)</li>
+                  <li>Median Household Income per zipcode (Numerical)</li>
+                  <li>Poverty Rate per zipcode (Numerical)</li>
+                  <li>Number of Public Schoolsper zipcode (Numerical)</li>
+                </ul>
+            </ul>
+            <figure class="figure">
+              <!-- <img class="panel" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px"> -->
+              <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px">
+              <figcaption class="figure-caption text-center">Prediction Model (1 BDR)</figcaption>
+            </figure>
+          <h5>V. MEASURE THE PERFORMANCE OF THE PREDICTIVE MODEL</h5>
+            <ul>
+              <li>Training Score (r-square): 0.324</li>
+              <li>Testing Score (r-square): 0.244</li>
+            </ul>
+
+            <p>*Residuals are the difference between the true house prices and the predicted house prices.</p>
+            <figure class="figure">
+            <!-- <img class="panel" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px"> -->
+            <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px">
+            <figcaption class="figure-caption text-center">Residual Plot for Training and Testing Data (1 BDR)</figcaption>
+          </figure>
+
+            <h5>VI. CONCLUSIONS</h5>
+            <ol>
+              <li>The prediction model needs improvement based on the performance measures shown above.</li>
+              <li>r-square closer to 1 indicates a better model. This model has a score of 0.244.</li>
+              <li>Predictive line cannot be plotted in a 3D space for the multiple Linear Regression model, so residuals were plotted instead.</li>
+              <li>Residual plot shows that the predictive values are not very close to the zero on the y-axis indicating high residuals.</li>
+              <li>Highly collinear factors (like Population, Median Household Income, Poverty Rate) could be negatively effecting scores.</li>
+            </ol>
+            <br>
         </div>
+        <!-- Box ends -->
       </div>
-      <!-- Row 1 ends -->
-
-      <!-- Row 2 begins -->
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="title">Prediction Model</div>
-          <img class="panel" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px">
-        </div>
-
-        <div class="col-lg-6">
-          <div class="title">Residual Plot for Training and Testing Data</div>
-          <img class="panel" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px">
-          <p>*Residuals are the difference between the true house prices and the predicted house prices.</p>
-        </div>
-      </div>
-      <!-- Row 2 ends -->
-    
+      <!-- Row ends -->
     </div>
     <!-- Content Section Ends -->
-
+    <br>
       <!-- Footer Section begins -->
     <footer>
         <div class="footer">Copyright &copy; Machine Learning Enthusiasts 2020</div>

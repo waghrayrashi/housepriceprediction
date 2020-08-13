@@ -86,10 +86,41 @@
       <!-- Row 1 begins -->
       <div class="row">
         <div class="col-lg-12">
-          <div class="title">Three Bedroom House Prices in North Carolina</div>
-          <p>Model looks linear. </p>
-          <p>Residual plot is used to check the prediction because a predictive line cannot be plotted in a 3D space for the multiple Linear Regression model.</p>
-          <p>r-square =  [not "good" because it is not close to 1]</p>
+          <div class="title">Prediction of 3-Bedroom House Prices in North Carolina</div>
+          <br>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Model Validation Metric</th>
+                <th scope="col">Value</th>
+                <th scope="col">Conclusions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Training Score (r-squared)</th>
+                <td>0.233</td>
+                <td>Not good, needs to be closer to 1 for better prediction</td>
+              </tr>
+              <tr>
+                <th scope="row">Testing Score (r-squared)</th>
+                <td>0.130</td>
+                <td>Not good, needs to be closer to 1 for better prediction</td>
+              </tr>
+              <tr>
+                <th scope="row">Residuals*</th>
+                <td>See plot below</td>
+                <td>Predictive values are not very close to the zero on the y-axis indicating high residuals-need improvement.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h6>Notes:</h6>
+          <ul>
+            <li>Predictive line cannot be plotted in a 3D space for the multiple Linear Regression model.</li>
+            <li>Highly collinear factors (like Population, Median Household Income, Poverty Rate) could be negatively effecting scores</li>
+            <li>Study of the Variance Inflation Factor (VIF) is required</li>
+          </ul>
         </div>
       </div>
       <!-- Row 1 ends -->
@@ -99,14 +130,12 @@
         <div class="col-lg-6">
           <div class="title">Prediction Model</div>
           <img class="panel" id="activeimage" src="./static/images/LinearRegression_3bdr.png" alt="Prediction (3 BDR)"width="500px", height="300px">
-          <p>Model explanation</p>
         </div>
 
         <div class="col-lg-6">
           <div class="title">Residual Plot for Training and Testing Data</div>
           <img class="panel" id="activeimage" src="./static/images/Residual Plot_3bdr.png" alt="Residual Plot (3 BDR)"width="500px", height="300px">
-          <p><strong>Residuals</strong> are the difference between the true house prices (y) and the predicted house prices (predicted).
-            The closer the predictive values are to the zero on the y-axis on the residual plot, the more accurate the predictions.</p>
+          <p>*Residuals are the difference between the true house prices and the predicted house prices.</p>
         </div>
       </div>
       <!-- Row 2 ends -->

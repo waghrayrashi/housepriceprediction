@@ -140,7 +140,7 @@
               <li>The above correlation matrix shows that <em>Population</em> and <em>Number of Schools</em> have a strong positive correlation of 0.81.</li>
               <li>Similarly, the <em>Median Household Income</em> and <em>Poverty Rate</em> have a strong negative correlation of -0.72 </li>
               <li>Both of these factors could cause multicollinearity thereby effecting the model.</li>
-              <li>However, due to the limited number of features, we continued teh analysis without dropping any of these variables.</li>
+              <li>However, due to the limited number of predictors available, none of these predictors were not dropped from the analysis.</li>
             </ol>
           <h5>III. CONVERT CATEGORICAL PREDICTORS TO NUMERIC VALUES</h5>
           <p>Next we convert the categorical predictors to numeric values using OneHotEncoding.
@@ -169,30 +169,64 @@
                   <li>Number of Public Schoolsper zipcode (Numerical)</li>
                 </ul>
             </ul>
- 
+            <!-- <h6>Prediction Model with Normal Distribution of House Prices</h6> -->
             <figure class="figure">
               <!-- <img class="panel" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px"> -->
               <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px">
-              <figcaption class="figure-caption text-center">Prediction Model (1 BDR)</figcaption>
+              <figcaption class="figure-caption text-center">Prediction Model (1 BDR) - Normal Distribution</figcaption>
+            </figure>
+            <!-- <h6>Prediction Model with Logarithmic Distribution of House Prices</h6> -->
+            <figure class="figure">
+              <!-- <img class="panel" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px"> -->
+              <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LogLinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px">
+              <figcaption class="figure-caption text-center">Prediction Model (1 BDR) - Logarithmic Distribution</figcaption>
             </figure>
 
           <h5>V. MEASURE THE PERFORMANCE OF THE PREDICTIVE MODEL</h5>
-            <ul>
-              <li>Training Score (r-square): 0.324</li>
-              <li>Testing Score (r-square): 0.244</li>
-            </ul>
+          <h6>Performance Scores</h6>
+            <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">House Price Distribution</th>
+                  <th scope="col">Training Score (r-square)</th>
+                  <th scope="col">Testing Score (r-square)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Normal</th>
+                  <td>0.324</td>
+                  <td>0.244</td>
+                </tr>
+                <tr>
+                  <th scope="row">Logarithmic</th>
+                  <td>1.0</td>
+                  <td>0.238</td>
+                </tr>
+              </tbody>
+            </table>
 
             <p>A predictive line cannot be plotted in a 3D space to validate the performance of this multivariate Linear Regression model. 
               Hence Residuals were calculated and plotted instead.</p>
   
             <p>*Residuals are the difference between the true house prices and the predicted house prices.
                 The Residual plot shows that the predictive values are not very close to the zero on the y-axis indicating high residuals.</p>
-
+            <div class = "col-lg-6">
+              <!-- <h6>Performance Scores with Normal Distribution</h6> -->
+              <figure class="figure">
+                <!-- <img class="panel" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px"> -->
+                <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px">
+                <figcaption class="figure-caption text-center">Residual Plot for Training and Testing Data (1 BDR) - Normal Distribution</figcaption>
+              </figure>
+            </div>
+            <div class = "col-lg-6">
+            <!-- <h6>Performance Scores with Logarithmic Distribution</h6> -->
             <figure class="figure">
-            <!-- <img class="panel" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px"> -->
-            <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px">
-            <figcaption class="figure-caption text-center">Residual Plot for Training and Testing Data (1 BDR)</figcaption>
-          </figure>
+              <!-- <img class="panel" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px"> -->
+              <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LogResidual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px">
+              <figcaption class="figure-caption text-center">Residual Plot for Training and Testing Data (1 BDR) - Logarithmic Distribution</figcaption>
+            </figure>
+          </div>
 
             <h5>VI. CONCLUSIONS</h5>
             <ol>

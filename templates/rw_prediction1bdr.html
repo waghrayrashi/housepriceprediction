@@ -89,21 +89,21 @@
             <br>
 
           <h5>I. EXPLORE THE DISTRIBUTION OF HOUSE PRICES</h5>
+          <p>We begin our exploration by studying the normal distribution of house prices.</p>
             <figure class="figure">
               <!-- <img class="panel" id="activeimage" src="./static/images/PriceDistribution_1bdr.png" alt="Price Distribution (1 BDR)"width="500px", height="300px"> -->
               <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/PriceDistribution_1bdr.png" alt="Price Distribution (1 BDR)"width="500px", height="300px">
               <figcaption class="figure-caption text-center">House Price Distribution (1 BDR)</figcaption>
             </figure>
             <ul>
-              <li>House prices have a positive skew with higher concentration on cheaper homes.</li>
-              <li>The logarithm of house prices was calculated to see if that gives a more symmetrical distribution.</li>
+              <li>Based on the above histogram, the House prices have a positive skew with higher concentration on cheaper homes.</li>
+              <li>The logarithm of house prices could give a more symmetrical distribution.</li>
               <ul>
                 <li>Skew (Normal Distribution) = 1.66</li>
                 <li>Kurtosis (Normal Distribution) = 4.67</li>
               </ul>
             </ul>
-              
-          <h5>II. NORMALIZE DISTRIBUTION OF HOUSE PRICES</h5>
+<br>
             <figure class="figure">
               <!-- <img class="panel" id="activeimage" src="./static/images/LogPriceDistribution_1bdr.png" alt="Log. Price Distribution (1 BDR)"width="500px", height="300px"> -->
               <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LogPriceDistribution_1bdr.png" alt="Log. Price Distribution (1 BDR)"width="500px", height="300px">
@@ -118,29 +118,48 @@
               </ul>
             </ul>
 
-          <h5>III. MEASURE THE LINEAR RELATIONSHIP BETWEEN THE PREDICTOR VARIABLES</h5>
+          <h5>II. MEASURE THE LINEAR RELATIONSHIP BETWEEN THE PREDICTOR VARIABLES</h5>
+          <p>Now moving on to exploring the predictor variables and their relationship with house prices. There are 6 variables used to define the features of the location of the houses: </p>
+          <ul>
+            <li>City (Categorical)</li>
+            <li>Zipcode (Categorical)</li>
+            <li>Population per zipcode (Numerical)</li>
+            <li>Median Household Income per zipcode (Numerical)</li>
+            <li>Poverty Rate per zipcode (Numerical)</li>
+            <li>Number of Public Schoolsper zipcode (Numerical)</li>
+          </ul>
+          <p>An important point in selecting predictors for a linear regression model is to check for multicolinearity. <strong>Multicolinearity</strong> occurs when a 
+            set of predictors are very highly correlated - in other words, they mean the same thing when used in the prediction model and hence these feature pairs can affect the model. 
+          A Correlation Matrix is used to study the correlation between these variables.</p>
             <figure class="figure">
             <!-- <img class="panel" id="activeimage" src="./static/images/Correlation Matrix_1bdr.png" alt="Correlation Matrix (1 BDR)"width="500px", height="300px"> -->
             <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Correlation Matrix_1bdr.png" alt="Correlation Matrix (1 BDR)"width="500px", height="300px">
             <figcaption class="figure-caption text-center">Correlation Matrix (1 BDR)</figcaption>
             </figure>
             <ol>
-              <li>An important point in selecting predictors for a linear regression model is to check for multicolinearity (if multiple predictors mean the same thing).</li>
-              <li>Multicolinearity occurs when set of predictors are very highly correlated - in other words, they mean the same thing and hence these feature pairs can affect the model.</li>
-              <li>Population and Number of Schools have a strong coorelation of 0.81.</li>
-              <li>Similarly, the Median Household Income and Poverty Rate have a strong negative correlation of -0.72 which could also cause multicollinearity.</li>
+              <li>The above correlation matrix shows that <em>Population</em> and <em>Number of Schools</em> have a strong positive correlation of 0.81.</li>
+              <li>Similarly, the <em>Median Household Income</em> and <em>Poverty Rate</em> have a strong negative correlation of -0.72 </li>
+              <li>Both of these factors could cause multicollinearity thereby effecting the model.</li>
+              <li>However, due to the limited number of features, we continued teh analysis without dropping any of these variables.</li>
             </ol>
+          <h5>III. CONVERT CATEGORICAL PREDICTORS TO NUMERIC VALUES</h5>
+          <p>Next we convert the categorical predictors to numeric values using OneHotEncoding.
+            OneHotEncoding is used to encode each of these variables as a one-hot vector, i.e. a vector where only one element is non-zero, or hot.</p>
+            <ul>
+            <li>City (Categorical) - values encoded</li>
+            <li>Zipcode (Categorical) - values encoded</li>
+          </ul>
 
           <h5>IV. BUILD THE PREDICTION MODEL USING LINEAR REGRESSION</h5>
             <ul>
-              <li><strong>Number of Samples:</strong> 406</li>
-              <li><strong>Target Variable</strong>: Median House Price (USD)</li>
-              <li><strong>Total Predictors:</strong> 6</li>
+              <li>Number of Samples:</strong> 406</li>
+              <li>Target Variable: Median House Price (USD)</li>
+              <li>Total Predictors: 6</li>
               <ul>
                 <li>Numerical Predictors: 4</li>
                 <li>Categorical Predictors: 2</li>
               </ul>
-              <li><strong>Predictor Information:</strong></Li>
+              <li>Predictors:</Li>
                 <ul>
                   <li>City (Categorical)</li>
                   <li>Zipcode (Categorical)</li>
@@ -150,18 +169,25 @@
                   <li>Number of Public Schoolsper zipcode (Numerical)</li>
                 </ul>
             </ul>
+ 
             <figure class="figure">
               <!-- <img class="panel" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px"> -->
               <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="Prediction (1 BDR)"width="500px", height="300px">
               <figcaption class="figure-caption text-center">Prediction Model (1 BDR)</figcaption>
             </figure>
+
           <h5>V. MEASURE THE PERFORMANCE OF THE PREDICTIVE MODEL</h5>
             <ul>
               <li>Training Score (r-square): 0.324</li>
               <li>Testing Score (r-square): 0.244</li>
             </ul>
 
-            <p>*Residuals are the difference between the true house prices and the predicted house prices.</p>
+            <p>A predictive line cannot be plotted in a 3D space to validate the performance of this multivariate Linear Regression model. 
+              Hence Residuals were calculated and plotted instead.</p>
+  
+            <p>*Residuals are the difference between the true house prices and the predicted house prices.
+                The Residual plot shows that the predictive values are not very close to the zero on the y-axis indicating high residuals.</p>
+
             <figure class="figure">
             <!-- <img class="panel" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px"> -->
             <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Residual Plot_1bdr.png" alt="Residual Plot (1 BDR)"width="500px", height="300px">
@@ -171,10 +197,8 @@
             <h5>VI. CONCLUSIONS</h5>
             <ol>
               <li>The prediction model needs improvement based on the performance measures shown above.</li>
-              <li>r-square closer to 1 indicates a better model. This model has a score of 0.244.</li>
-              <li>Predictive line cannot be plotted in a 3D space for the multiple Linear Regression model, so residuals were plotted instead.</li>
-              <li>Residual plot shows that the predictive values are not very close to the zero on the y-axis indicating high residuals.</li>
-              <li>Highly collinear factors (like Population, Median Household Income, Poverty Rate) could be negatively effecting scores.</li>
+              <li>The model has a r-square score of 0.244 (r-square closer to 1 indicates a good model). </li>
+              <li>Multicollinearity could be negatively effecting the model.</li>
             </ol>
             <br>
         </div>

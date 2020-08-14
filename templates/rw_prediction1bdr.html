@@ -88,7 +88,7 @@
           <h3 class="title">Prediction of 1-Bedroom House Prices in North Carolina</h3>
             <br>
 
-          <h5>I. CHECK THE DISTRIBUTION OF HOUSE PRICES</h5>
+          <h5>I. EXPLORE THE DISTRIBUTION OF HOUSE PRICES</h5>
             <figure class="figure">
               <!-- <img class="panel" id="activeimage" src="./static/images/PriceDistribution_1bdr.png" alt="Price Distribution (1 BDR)"width="500px", height="300px"> -->
               <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/PriceDistribution_1bdr.png" alt="Price Distribution (1 BDR)"width="500px", height="300px">
@@ -96,14 +96,14 @@
             </figure>
             <ul>
               <li>House prices have a positive skew with higher concentration on cheaper homes.</li>
-              <li>To get a more symmetrical distribution, the logarithm of house prices could help.</li>
+              <li>The logarithm of house prices was calculated to see if that gives a more symmetrical distribution.</li>
               <ul>
-                <li>Skew= 1.66</li>
-                <li>Kurtosis = 4.67</li>
+                <li>Skew (Normal Distribution) = 1.66</li>
+                <li>Kurtosis (Normal Distribution) = 4.67</li>
               </ul>
             </ul>
               
-          <h5>II. NORMALIZE DISTRIBUTION BY TAKING LOGARITHM OF HOUSE PRICES</h5>
+          <h5>II. NORMALIZE DISTRIBUTION OF HOUSE PRICES</h5>
             <figure class="figure">
               <!-- <img class="panel" id="activeimage" src="./static/images/LogPriceDistribution_1bdr.png" alt="Log. Price Distribution (1 BDR)"width="500px", height="300px"> -->
               <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/LogPriceDistribution_1bdr.png" alt="Log. Price Distribution (1 BDR)"width="500px", height="300px">
@@ -113,12 +113,12 @@
                 <li>Taking the logarithm of house prices, we obtain something similar to a Gaussian distribution.</li>
                 <li>This logarithmic distribution will ensure that relative errors for cheaper and more expensive homes are treated on an equal footing.</li>
               <ul>
-                <li>Skew (for Log.Dist.) = -0.48</li>
-                <li>Kurtosis (for Log.Dist.) = 0.65</li>
+                <li>Skew (Logarithmic Distribution) = -0.48</li>
+                <li>Kurtosis (Logarithmic Distribution) = 0.65</li>
               </ul>
             </ul>
 
-          <h5>III. MEASURE LINEAR RELATIONSHIP BETWEEN THE PREDICTOR VARIABLES</h5>
+          <h5>III. MEASURE THE LINEAR RELATIONSHIP BETWEEN THE PREDICTOR VARIABLES</h5>
             <figure class="figure">
             <!-- <img class="panel" id="activeimage" src="./static/images/Correlation Matrix_1bdr.png" alt="Correlation Matrix (1 BDR)"width="500px", height="300px"> -->
             <img class="figure-img img-fluid rounded" id="activeimage" src="./static/images/Correlation Matrix_1bdr.png" alt="Correlation Matrix (1 BDR)"width="500px", height="300px">
@@ -126,11 +126,12 @@
             </figure>
             <ol>
               <li>An important point in selecting predictors for a linear regression model is to check for multicolinearity (if multiple predictors mean the same thing).</li>
-              <li>Population and Number of Schools are strongly correlated to each other with a correlation co-efficient of 0.81. These feature pairs can affect the model.</li>
+              <li>Multicolinearity occurs when set of predictors are very highly correlated - in other words, they mean the same thing and hence these feature pairs can affect the model.</li>
+              <li>Population and Number of Schools have a strong coorelation of 0.81.</li>
               <li>Similarly, the Median Household Income and Poverty Rate have a strong negative correlation of -0.72 which could also cause multicollinearity.</li>
             </ol>
 
-          <h5>IV. BUILD THE LINEAR REGRESSION MODEL</h5>
+          <h5>IV. BUILD THE PREDICTION MODEL USING LINEAR REGRESSION</h5>
             <ul>
               <li><strong>Number of Samples:</strong> 406</li>
               <li><strong>Target Variable</strong>: Median House Price (USD)</li>

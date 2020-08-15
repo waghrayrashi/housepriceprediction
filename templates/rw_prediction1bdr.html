@@ -37,6 +37,11 @@
           <!-- List of items in the Navigation section -->
           <ul class="navbar-nav">
             
+            <!-- Analysis Methodology in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+            </li>
+
             <!-- Exploratory data Analysis in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('analysis') }}">Data Exploration</a>
@@ -63,11 +68,6 @@
             <!-- Conclusions in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('conclusions') }}">Conclusions</a>
-            </li>
-
-            <!-- Analysis Methodology in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
             </li>
 
             <!-- Acknowledgements in the Navigation Section -->

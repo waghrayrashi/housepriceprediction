@@ -37,6 +37,11 @@
           <!-- List of items in the Navigation section -->
           <ul class="navbar-nav">
             
+            <!-- Analysis Methodology in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+            </li>
+
             <!-- Exploratory data Analysis in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('analysis') }}">Data Exploration</a>
@@ -65,11 +70,6 @@
               <a class="nav-link" href="{{ url_for ('conclusions') }}">Conclusions</a>
             </li>
 
-            <!-- Analysis Methodology in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
-            </li>
-
             <!-- Acknowledgements in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('acknowledgements') }}">Acknowledgements</a>
@@ -90,7 +90,7 @@
             <p>The goal of this project was to determine if Location is indeed the most important factor in determining the value of houses in North Carolina?
               Based on the study performed, the results are <strong>not conclusive</strong> at this time due to the following reasons:</p>
             <ul>
-              <li>The predictive models are not very strong</li>
+              <li>The results of the Linear Regression predictive models were not very strong</li>
               <li>The set of predictor variables is small/limited and should be expanded</li>
               <li>The data also suffered from multicollinearity, regularization techniques should be employed for improved results</li>
             </ul>
@@ -98,7 +98,8 @@
             <p>The results of this study could be improved by incorporating the following:</p>            
             <ul>
               <li>Including House features along with location features (Ex: Area of the house, number of bedrooms and bathrooms & others)</li>
-              <li>Expanding the set of location features (Ex: Crime rate within the neighborhood, School Ratings etc.)</li>
+              <li>Expanding the set of location features (Ex: Crime rate within the neighborhood, School Ratings, Availability of Healthcare/Hospitals etc.)</li>
+              <li>Testing other types of predictive models for analysis</li>
             </ul>
           </div>
           <!-- Boxed content ends -->

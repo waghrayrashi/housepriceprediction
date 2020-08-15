@@ -37,6 +37,11 @@
           <!-- List of items in the Navigation section -->
           <ul class="navbar-nav">
             
+            <!-- Analysis Methodology in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+            </li>
+
             <!-- Exploratory data Analysis in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('analysis') }}">Data Exploration</a>
@@ -63,11 +68,6 @@
             <!-- Conclusions in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('conclusions') }}">Conclusions</a>
-            </li>
-
-            <!-- Analysis Methodology in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
             </li>
 
             <!-- Acknowledgements in the Navigation Section -->
@@ -111,23 +111,23 @@
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>$300,000 - Wilmington</td>
-                    <td>$70,000 - Weldon</td>
+                    <td>$139,167 - Oak Ridge</td>
+                    <td>$14,934 - Kinston</td>
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>$300,000 - Wilmington</td>
-                    <td>$70,000 - Weldon</td>
+                    <td>$603,578 - Wrightsville Beach</td>
+                    <td>$12,608 - Weldon</td>
                   </tr>
                   <tr>
                     <th scope="row">3</th>
-                    <td>$300,000 - Wilmington</td>
-                    <td>$70,000 - Weldon</td>
+                    <td>$867,085 - Wrightsville Beach</td>
+                    <td>$39,491 - Weldon</td>
                   </tr>
                   <tr>
                     <th scope="row">4</th>
-                    <td>$300,000 - Wilmington</td>
-                    <td>$70,000 - Weldon</td>
+                    <td>$1.1M - Wrightsville Beach</td>
+                    <td>$59,988 - Weldon</td>
                   </tr>
                 </tbody>
               </table>
@@ -227,8 +227,10 @@
           <div class="title"> III. RTP Analysis</div>
           <div>
             <ul>
-              <li>Cary has the highest priced homes</li>
-              <li>Durham has the least priced homes</li>
+              <li>As expected, higher poverty rates are associated with lower household incomes and lower home prices</li>
+              <li>Apex has the highest priced 1 and 2 bedroom median home prices</li>
+              <li>Raleigh zip codes 27605 and 27608 have the highest 3 and 4 bedroom median home prices</li>
+              <li>Durham consistently has the highest poverty rate and lowest median home prices</li>
             </ul>
           </div>
         </div>

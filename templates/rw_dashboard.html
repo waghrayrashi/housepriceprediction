@@ -37,6 +37,11 @@
           <!-- List of items in the Navigation section -->
           <ul class="navbar-nav">
             
+            <!-- Analysis Methodology in the Navigation Section -->
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
+            </li>
+
             <!-- Exploratory data Analysis in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('analysis') }}">Data Exploration</a>
@@ -63,11 +68,6 @@
             <!-- Conclusions in the Navigation Section -->
             <li class="nav-item">
               <a class="nav-link" href="{{ url_for ('conclusions') }}">Conclusions</a>
-            </li>
-
-            <!-- Analysis Methodology in the Navigation Section -->
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for ('methodology') }}">Methodology</a>
             </li>
 
             <!-- Acknowledgements in the Navigation Section -->
@@ -136,7 +136,7 @@
           <div class="title">One Bedroom House Price - Prediction</div>
           <figure class="figure">
             <a href="{{ url_for ('prediction1bdr') }}"><img class="panel" id="activeimage" src="./static/images/LinearRegression_1bdr.png" alt="1 Bedroom house price prediction"width="550px", height="370px"></a>
-          <figcaption class="figure-caption text-center">Training Score (r-square): 0.324 | Testing Score (r-square): 0.244</figcaption>
+          <figcaption class="figure-caption text-center">Logrithmic Distribution (r-square) Scores [Training: 1.0 | Testing: 0.238]</figcaption>
         </figure>
         </div>
         <!-- Row 1 right box for price prediction ends -->
@@ -187,7 +187,7 @@
           <div class="title">Two Bedroom House Price - Prediction</div>
           <figure class="figure">
             <a href="{{ url_for ('prediction2bdr') }}"><img class="panel" id="activeimage" src="./static/images/LinearRegression_2bdr.png" alt="2 Bedroom house price prediction"width="550px", height="370px"></a>
-            <figcaption class="figure-caption text-center">Training Score (r-square): 0.264 | Testing Score (r-square): 0.108</figcaption>
+            <figcaption class="figure-caption text-center">Logrithmic Distribution (r-square) Scores [Training: 0.99 | Testing: 0.379]</figcaption>
           </figure>
         </div>
         <!-- Row 2 right box for price prediction ends -->
@@ -238,7 +238,7 @@
           <div class="title">Three Bedroom House Price - Prediction</div>
           <figure class="figure">
             <a href="{{ url_for ('prediction3bdr') }}"><img class="panel" id="activeimage" src="./static/images/LinearRegression_3bdr.png" alt="3 Bedroom house price prediction"width="550px", height="370px"></a>
-            <figcaption class="figure-caption text-center">Training Score (r-square): 0.233 | Testing Score (r-square): 0.130</figcaption>
+            <figcaption class="figure-caption text-center">Logrithmic Distribution (r-square) Scores [Training: 0.99 | Testing: 0.356]</figcaption>
           </figure>
         </div>
         <!-- Row 3 right box for price prediction ends -->
@@ -287,7 +287,7 @@
           <div class="title">Four Bedroom House Price - Prediction</div>
           <figure class="figure">
             <a href="{{ url_for ('prediction4bdr') }}"><img class="panel" id="activeimage" src="./static/images/LinearRegression_4bdr.png" alt="4 Bedroom house price prediction"width="550px", height="370px"></a>
-            <figcaption class="figure-caption text-center">Training Score (r-square): 0.312 | Testing Score (r-square): -1217421.138</figcaption>
+            <figcaption class="figure-caption text-center">Logrithmic Distribution (r-square) Scores [Training: 1.0 | Testing: -2422017.89]</figcaption>
           </figure>
         </div>
         <!-- Row 4 right box for price prediction ends -->
